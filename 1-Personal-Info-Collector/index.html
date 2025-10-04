@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-Personal-Info-Collector</title>
+</head>
+<body>
+    
+
+
+
+<script>
+    // Function to get valid input
+function getValidInput(promptText) {
+    let value;
+    do {
+        value = prompt(promptText, "").trim();
+    } while (!value); // repeat until user enters something valid
+    return value;
+}
+
+// Get inputs
+let name = getValidInput("Enter Your Name");
+let ageStr = getValidInput("Enter Your Age");
+let color = getValidInput("What is your favourite color");
+
+// Convert age to number
+let age = parseFloat(ageStr);
+while(isNaN(age)){
+    ageStr = getValidInput("Please enter a valid age (number)");
+    age = parseFloat(ageStr);
+}
+
+// Create message
+let message = `Hi, my name is ${name}, I am ${age} years old and my favorite color is ${color}.`;
+
+// Display message on webpage
+document.body.innerHTML = `<h2>${message}</h2>`;
+
+</script>
+
+</body>
+</html>
